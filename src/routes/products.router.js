@@ -33,7 +33,9 @@ productsRouter.get("/", async (req, res) => {
           prevPage: productsList.prevPage,
           nextPage: productsList.nextPage,
           currentPage: productsList.page,
-          totalPages: productsList.totalPages
+          totalPages: productsList.totalPages,
+          prevLink: productsList.prevLink,
+          nextLink: productsList.nextLink
       })
   } catch (error) {
     res.status(500).send("Error en el servidor");
