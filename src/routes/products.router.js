@@ -7,6 +7,7 @@ const ProductManager = require("../controllers/productManager");
 const productManager = new ProductManager();
 const ProductModel = require("../models/product.model.js");
 
+
 //array de productos
 
 

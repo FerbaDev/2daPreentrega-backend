@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.static("./src/public"));
 
 //rutas
-app.use("/api/products", productsRouter);
+app.use("/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/", viewsRouter)
 
