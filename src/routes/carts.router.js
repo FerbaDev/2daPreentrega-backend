@@ -18,6 +18,10 @@ cartRouter.post("/", async (req, res) => {
   }
 })
 
+cartRouter.get("/", (req, res) => {
+  res.render("carrito", { title: "Carrito" });
+})
+
 //listamos los productos 
 cartRouter.get("/:cid", async (req, res) => {
   let cartId = req.params.cid;

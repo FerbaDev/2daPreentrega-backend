@@ -26,7 +26,7 @@ app.use(express.static("./src/public"));
 
 //rutas
 app.use("/products", productsRouter);
-app.use("/api/carts", cartsRouter);
+app.use("/carrito", cartsRouter);
 app.use("/", viewsRouter)
 
 //1)referencia guardada del servidor
