@@ -1,6 +1,6 @@
 <h1>Lista de Productos</h1>
 
-    {{#each product}}
+    {{#each products}}
 <ul>
         <li> {{this.title}} </li>
         <li> {{this.description}} </li>
@@ -8,7 +8,7 @@
 </ul>
 <button>Agregar al carrito</button>
     {{/each}}
-
+<br>
 {{#if hasPrevPage}}
 <a href="/products?page={{prevPage}}">Anerior</a>
 {{/if}}
