@@ -3,6 +3,7 @@ const app = express();
 const PUERTO = 8080;
 const exphbs = require("express-handlebars");
 const socket = require("socket.io")
+
 //configuramos handlebaars
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
@@ -12,15 +13,15 @@ app.set("views", "./src/views");
 const viewsRouter = require("./routes/views.router.js")
 const productsRouter = require("./routes/products.router.js");
 const cartsRouter = require("./routes/carts.router.js");
+
 //traemos el product manager
 const ProductManager = require("./controllers/productManager.js");
-//instanciamos
 const productManager = new ProductManager("./src/models/productos.json");
 require("./database.js");
+
 //configuramos middleware para recibir datos en formato json
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
-//Midelware
 app.use(express.static("./src/public"));
 
 //rutas
