@@ -54,7 +54,26 @@ cartRouter.post("/:cid/product/:pid", async (req, res) => {
   }
  })
 
-
+//eliminamos un producto por id
+cartRouter.delete('/:cid/product/:pid', async (req, res) => {
+  try {
+    let cartId = req.params.cid;
+    let productId = req.params.pid;
+    const updateCart = await cartManager.deleteProductFromCart(cartId, productId);
+    res.json({
+      status: "success",
+      message: "Producto eliminado del carrito correctamente",
+      updateCart
+    })
+  } catch (error) {
+    console.error('Error al eliminar el producto del carrito en cart.router', error);
+        res.status(500).json({
+            status: 'error',
+            error: 'Error del servidor',
+        });
+    }
+  }
+)
 
 //exportamos el router
 module.exports = cartRouter;

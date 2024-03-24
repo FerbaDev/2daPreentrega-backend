@@ -26,7 +26,7 @@ productsRouter.get("/", async (req, res) => {
       res.render("products", 
       {
           status: "succes/error",
-          payload: [],
+          payload: [productosResultadoFinal],
           products: productosResultadoFinal,
           hasPrevPage: productsList.hasPrevPage,
           hasNextPage: productsList.hasNextPage,

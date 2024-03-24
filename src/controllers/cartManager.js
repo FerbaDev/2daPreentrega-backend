@@ -51,6 +51,23 @@ class CartManager {
             throw error;
         }
     }
+
+    async deleteProductFromCart(cartId, productId) {
+        try {
+            let cart = await CartModel.findById(cartId);
+
+            if (!cart) {
+                throw new Error('Carrito no encontrado');
+            }
+
+            cart.products = cart.products.filter(product => product._id.toString() !== productId);
+            await cart.save();
+            return cart;
+        } catch (error) {
+            console.error('Error al eliminar el producto del carrito en cartManager', error);
+            throw error;
+        }
+    } 
 }
 
 module.exports = CartManager;
