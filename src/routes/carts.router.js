@@ -3,7 +3,7 @@ const cartRouter = express.Router();
 //traemos el cart manager
 const CartManager = require("../controllers/cartManager.js")
 const cartManager = new CartManager()
-const cartModel = require("../models/cart.model.js")
+const CartModel = require("../models/cart.model.js")
 
 //creamos el nuevo carrito
 
@@ -26,7 +26,7 @@ cartRouter.get("/:cid", async (req, res) => {
   let cartId = req.params.cid;
 
   try {
-    const cart = await cartModel.findById(cartId);
+    const cart = await CartModel.findById(cartId);
     if (!cart) {
       console.log("No existe el carrito con ese id");
       return res.status(404).json({ error: "Carrito no encontrado" });
