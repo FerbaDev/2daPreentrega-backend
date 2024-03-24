@@ -1,19 +1,15 @@
 const express = require("express");
-
-//invocamos el método router de express
 const productsRouter = express.Router();
+
 //traemos el product manager
-const ProductManager = require("../controllers/productManager");
+const ProductManager = require("../controllers/productManager.js");
 const productManager = new ProductManager();
 const ProductModel = require("../models/product.model.js");
 
 
-//array de productos
-
-
 //rutas productos
 //get products
-productsRouter.get("/products", async (req, res) => {
+productsRouter.get("/", async (req, res) => {
   const page = req.query.page || 1;
   const limit = 10;
 
@@ -27,7 +23,8 @@ productsRouter.get("/products", async (req, res) => {
           return rest; 
       })
 
-      res.render("products", {
+      res.render("products", 
+      {
           products: productosResultadoFinal,
           hasPrevPage: productsList.hasPrevPage,
           hasNextPage: productsList.hasNextPage,
