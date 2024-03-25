@@ -85,6 +85,30 @@ class CartManager {
             throw error;
         }
     }
+
+    async updateProductQuantity(cartId, productId, newQuantity) {
+        try {
+            let cart = await CartModel.findById(cartId);
+            if (!cart) {
+                throw new Error('Carrito no encontrado');
+            }
+            const productIndex = cart.products.findIndex(item => item.product._id.toString() === productId);
+            if (productIndex !== -1) {
+                cart.products[productIndex].quantity = newQuantity;
+
+
+                cart.markModified('products');
+
+                await cart.save();
+                return cart;
+            } else {
+                throw new Error('Producto no encontrado en el carrito');
+            }
+        } catch (error) {
+            console.error('Error al actualizar la cantidad del producto en carrito desde cart manager', error);
+            throw error;
+        }
+    }
 }
 
 module.exports = CartManager;

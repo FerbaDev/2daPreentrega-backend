@@ -93,5 +93,37 @@ cartRouter.put("/:cid", async (req, res) => {
   }
 })
 
+//actualizamos cantidad de ejemplares de producto por catidad pasada por body
+
+cartRouter.put("/:cid/product/:pid", async (req, res) => {
+  try {
+    let cartId = req.params.cid;
+    let productId = req.params.pid;
+    const newQuantity = req.body.quantity;
+
+    let updatedCart = await cartManager.updateProductQuantity(cartId, productId, newQuantity);
+    res.json({
+      status: "success",
+      message: "Cantidad del producto actualizada correctamente",
+      updatedCart,
+  });
+  } catch (error) {
+    console.error('Error al actualizar la cantidad del producto en el carrito desde cart.router', error);
+        res.status(500).json({
+            status: 'error',
+            error: 'Error interno del servidor',
+        });
+  }
+})
+
+
+
+
+
+
+
+
+
+
 //exportamos el router
 module.exports = cartRouter;
