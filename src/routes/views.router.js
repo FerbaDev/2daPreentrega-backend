@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router();
 const CartManager = require("../controllers/cartManager.js")
+
 router.get("/", (req, res) => {
   res.render("home", { title: "Home" });
 });

@@ -90,7 +90,7 @@ class CartManager {
         try {
             let cart = await CartModel.findById(cartId);
             if (!cart) {
-                throw new Error('Carrito no encontrado');
+                throw new Error("Carrito no encontrado");
             }
             const productIndex = cart.products.findIndex(item => item.product._id.toString() === productId);
             if (productIndex !== -1) {

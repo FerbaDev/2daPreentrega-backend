@@ -17,9 +17,7 @@ cartRouter.post("/", async (req, res) => {
   }
 })
 
-cartRouter.get("/", (req, res) => {
-  res.render("carrito", { title: "Carrito" });
-})
+
 
 //listamos los productos 
 cartRouter.get("/:cid", async (req, res) => {
@@ -135,13 +133,6 @@ cartRouter.delete("/:cid", async (req, res) => {
         });
   }
 })
-
-
-
-
-
-
-
 
 
 //exportamos el router
