@@ -11,7 +11,7 @@ const ProductModel = require("../models/product.model.js");
 //get products
 productsRouter.get("/", async (req, res) => {
   const page = req.query.page || 1;
-  const limit = 10;
+  const limit = 5;
 
   try {
       const productsList = await ProductModel.paginate({}, {limit, page});

@@ -26,8 +26,9 @@ app.use(express.static("./src/public"));
 
 //rutas
 app.use("/products", productsRouter);
-app.use("/carrito", cartsRouter);
+app.use("/carts", cartsRouter);
 app.use("/", viewsRouter)
+
 
 //1)referencia guardada del servidor
 const httpServer = app.listen(PUERTO, () => {
