@@ -68,6 +68,23 @@ class CartManager {
             throw error;
         }
     } 
+
+    async updateCart(cartId, updatedProducts) {
+        try {
+            let cart = await CartModel.findById(cartId);
+            if (!cart) {
+                throw new Error('Carrito no encontrado');
+            }
+            cart.products = updatedProducts;
+
+            cart.markModified("products");
+            await cart.save();
+            return cart;
+        } catch (error) {
+            console.error('Error al actualizar el carrito en cartManager', error);
+            throw error;
+        }
+    }
 }
 
 module.exports = CartManager;

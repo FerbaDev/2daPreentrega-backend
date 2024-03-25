@@ -75,5 +75,23 @@ cartRouter.delete('/:cid/product/:pid', async (req, res) => {
   }
 )
 
+//actualizamos el carrito con arreglo de productos
+cartRouter.put("/:cid", async (req, res) => {
+  let cartId = req.params.cid;
+  let updatedProducts = req.body;
+  //mandar array de productos en el body
+
+  try {
+    let updatedCart = await cartManager.updateCart(cartId, updatedProducts);
+    res.json(updatedCart)
+  } catch (error) {
+    console.error('Error al actualizar el carrito en cart.router', error);
+        res.status(500).json({
+            status: 'error',
+            error: 'Error interno del servidor',
+        });
+  }
+})
+
 //exportamos el router
 module.exports = cartRouter;
