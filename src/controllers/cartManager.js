@@ -109,6 +109,19 @@ class CartManager {
             throw error;
         }
     }
+
+    async emptyCart(cartId) {
+        try {
+            let cart = await CartModel.findByIdAndUpdate(cartId, {products: []}, {new: true});
+            if (!cart) {
+                throw new Error('Carrito no encontrado');
+            }
+            return cart;
+        } catch (error) {
+            console.error('Error al vaciar el carrito desde cart manager', error);
+            throw error;
+        }
+    }
 }
 
 module.exports = CartManager;

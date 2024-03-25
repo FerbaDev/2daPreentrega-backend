@@ -116,6 +116,25 @@ cartRouter.put("/:cid/product/:pid", async (req, res) => {
   }
 })
 
+//eliminar todos los productos del carrito
+
+cartRouter.delete("/:cid", async (req, res) => {
+  try {
+    let cartId = req.params.cid;
+    let updatedCart = await cartManager.emptyCart(cartId);
+    res.json({
+      status: 'success',
+      message: 'Todos los productos del carrito fueron eliminados correctamente',
+      updatedCart,
+  });
+  } catch (error) {
+    console.error('Error al vaciar el carrito desde cart router', error);
+        res.status(500).json({
+            status: 'error',
+            error: 'Error interno del servidor',
+        });
+  }
+})
 
 
 
