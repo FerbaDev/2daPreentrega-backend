@@ -19,7 +19,23 @@ cartRouter.post("/", async (req, res) => {
 
 
 
-//listamos los productos 
+// //listamos los productos 
+// cartRouter.get("/:cid", async (req, res) => {
+//   let cartId = req.params.cid;
+
+//   try {
+//     const cart = await CartModel.findById(cartId);
+//     if (!cart) {
+//       console.log("No existe el carrito con ese id");
+//       return res.status(404).json({ error: "Carrito no encontrado" });
+//   }
+//     res.json(cart.products)
+//   } catch (error) {
+//     console.error("Error al obtener carrito", error);
+//     res.status(500).json({error: "Error interno del servidor"})
+//   }
+//  })
+//listamos los productos probamos con copia
 cartRouter.get("/:cid", async (req, res) => {
   let cartId = req.params.cid;
 
@@ -28,8 +44,13 @@ cartRouter.get("/:cid", async (req, res) => {
     if (!cart) {
       console.log("No existe el carrito con ese id");
       return res.status(404).json({ error: "Carrito no encontrado" });
-  }
-    res.json(cart.products)
+    }
+    const productsInCart = cart.products.map(item => ({
+      product: item.product.toObject(),
+      //Lo convertimos a objeto para pasar las restricciones de Exp Handlebars. 
+      quantity: item.quantity
+   }));
+    res.render("carts", {productos: productsInCart})
   } catch (error) {
     console.error("Error al obtener carrito", error);
     res.status(500).json({error: "Error interno del servidor"})
@@ -133,6 +154,7 @@ cartRouter.delete("/:cid", async (req, res) => {
         });
   }
 })
+
 
 
 //exportamos el router
