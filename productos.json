@@ -1,0 +1,154 @@
+[
+    {
+        "title": "Termo 2",
+        "description": "Otra marca",
+        "price": 19999,
+        "thumbnail": "foto de termo 2",
+        "code": "xyz5678",
+        "stock": 50
+      },
+      {
+        "title": "Termo 3",
+        "description": "Marca exclusiva",
+        "price": 24999,
+        "thumbnail": "foto de termo 3",
+        "code": "def9876",
+        "stock": 75
+      },
+      {
+        "title": "Botella de agua",
+        "description": "Acero inoxidable",
+        "price": 15999,
+        "thumbnail": "foto de botella",
+        "code": "ghi5432",
+        "stock": 120
+      },
+      {
+        "title": "Taza térmica",
+        "description": "Diseño elegante",
+        "price": 18999,
+        "thumbnail": "foto de taza",
+        "code": "jkl6789",
+        "stock": 60
+      },
+      {
+        "title": "Cafetera",
+        "description": "Para espresso",
+        "price": 44999,
+        "thumbnail": "foto de cafetera",
+        "code": "mno1357",
+        "stock": 30
+      },
+      {
+        "title": "Mochila",
+        "description": "Resistente al agua",
+        "price": 29999,
+        "thumbnail": "foto de mochila",
+        "code": "pqr2468",
+        "stock": 80
+      },
+      {
+        "title": "Reloj",
+        "description": "Analógico",
+        "price": 7999,
+        "thumbnail": "foto de reloj",
+        "code": "stu9876",
+        "stock": 150
+      },
+      {
+        "title": "Paraguas",
+        "description": "Compacto",
+        "price": 1299,
+        "thumbnail": "foto de paraguas",
+        "code": "vwx5432",
+        "stock": 200
+      },
+      {
+        "title": "Lámpara de escritorio",
+        "description": "LED regulable",
+        "price": 21999,
+        "thumbnail": "foto de lámpara",
+        "code": "yz0123",
+        "stock": 40
+      },
+      {
+        "title": "Cargador portátil",
+        "description": "Batería externa",
+        "price": 1999,
+        "thumbnail": "foto de cargador",
+        "code": "abc5678",
+        "stock": 150
+      },
+      {
+        "title": "Auriculares inalámbricos",
+        "description": "Cancelación de ruido",
+        "price": 5999,
+        "thumbnail": "foto de auriculares",
+        "code": "xyz9876",
+        "stock": 80
+      },
+      {
+        "title": "Libro de cocina",
+        "description": "Recetas saludables",
+        "price": 1499,
+        "thumbnail": "foto de libro",
+        "code": "def2345",
+        "stock": 200
+      },
+      {
+        "title": "Laptop",
+        "description": "Ultrabook",
+        "price": 69999,
+        "thumbnail": "foto de laptop",
+        "code": "ghi3456",
+        "stock": 30
+      },
+      {
+        "title": "Bolso",
+        "description": "Cuero genuino",
+        "price": 3999,
+        "thumbnail": "foto de bolso",
+        "code": "jkl4567",
+        "stock": 100
+      },
+      {
+        "title": "Reloj inteligente",
+        "description": "Monitor de actividad",
+        "price": 7999,
+        "thumbnail": "foto de reloj inteligente",
+        "code": "mno5678",
+        "stock": 50
+      },
+      {
+        "title": "Gafas de sol",
+        "description": "Protección UV",
+        "price": 2499,
+        "thumbnail": "foto de gafas",
+        "code": "pqr6789",
+        "stock": 120
+      },
+      {
+        "title": "Teclado mecánico",
+        "description": "Retroiluminado",
+        "price": 4999,
+        "thumbnail": "foto de teclado",
+        "code": "stu7890",
+        "stock": 70
+      },
+      {
+        "title": "Manta suave",
+        "description": "Polar",
+        "price": 2999,
+        "thumbnail": "foto de manta",
+        "code": "vwx8901",
+        "stock": 180
+      },
+      {
+        "title": "Cámara digital",
+        "description": "Compacta",
+        "price": 17999,
+        "thumbnail": "foto de cámara",
+        "code": "yz0125",
+        "stock": 40
+      }
+]
